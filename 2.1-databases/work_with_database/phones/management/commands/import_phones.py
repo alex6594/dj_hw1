@@ -1,8 +1,9 @@
 import csv
 
 from django.core.management.base import BaseCommand
+from django.template.defaultfilters import slugify
 from phones.models import Phone
-
+from django.http import HttpResponse
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
@@ -13,5 +14,9 @@ class Command(BaseCommand):
             phones = list(csv.DictReader(file, delimiter=';'))
 
         for phone in phones:
-            # TODO: Добавьте сохранение модели
-            pass
+            id, name, image, price, release_date, lte_exists, slug = phone.values()
+            slug = slugify(name)
+            phone = Phone(id=id, name=name, image=image, price=price, release_date=release_date,
+                          lte_exists=lte_exists, slug=slug)
+            phone.save()
+        #return HttpResponse('База загружена')

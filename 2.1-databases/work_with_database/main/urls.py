@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 import phones.views
+from phones.management.commands.import_phones import Command
 
 urlpatterns = [
+    #path('db', Command.handle),
     path('admin/', admin.site.urls),
     path('', phones.views.index),
     path('catalog/', phones.views.show_catalog, name='catalog'),
