@@ -20,3 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('measurement.urls')),  # подключаем маршруты из приложения measurement
 ]
+
