@@ -4,7 +4,7 @@ from measurement.views import SensGetPost, SensModify, MeasurementPost
 
 urlpatterns = [
     path('sensors/', SensGetPost.as_view()),
-    path('sensors/<int:pk>/', SensModify.as_view()),
+    path('sensors/', SensModify.as_view()),
     path('measurements/', MeasurementPost.as_view())
 ]
 
