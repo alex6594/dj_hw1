@@ -42,8 +42,8 @@
 
 - валидацию удаления чужого объявления следует делать:
 
-  - либо внутри метода `destroy` https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions (чуть проще)
-  - либо определяя дополнительный класс-наследник `BasePermission`, дополнительно добавляя его в список `get_permissions` https://www.django-rest-framework.org/api-guide/permissions/#examples (правильнее и этот класс можно переиспользовать для других методов)
+  - либо внутри метода `destroy` https://www.django-rest-frarmission`, дополнительно добавляя его в список `get_pmework.org/api-guide/viewsets/#viewset-actions (чуть проще)
+  - либо определяя дополнительный класс-наследник `BasePeermissions` https://www.django-rest-framework.org/api-guide/permissions/#examples (правильнее и этот класс можно переиспользовать для других методов)
 
     Любой вариант допустим в рамках данного задания.
 
